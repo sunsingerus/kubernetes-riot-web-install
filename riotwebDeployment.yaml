@@ -22,6 +22,10 @@ spec:
       image: vectorim/riot-web
       ports:
         - containerPort: 80
+      volumeMounts:
+        - name: config-volume
+          mountPath: /app/config.json
+          subPath: config.json
     - name: sh
       image: busybox
       command:
@@ -30,5 +34,9 @@ spec:
         - "--"
       args:
         - "while true; do sleep 30; done;"
+  volumes:
+    - name: config-volume
+      configMap:
+        name: riotwebconfig
   restartPolicy: Never
 
