@@ -19,12 +19,31 @@ spec:
 #              servicePort: 80
 
   # Default backend
-  backend:
-    serviceName: riotweb-cip
-    servicePort: 80
+#  backend:
+#    serviceName: riotweb-cip
+#    servicePort: 80
 
 #    - http:
 #        paths:
 #          - backend:
 #              serviceName: riotweb-cip
 #              servicePort: 80
+
+#    - http:
+#        paths:
+#          - path: "/"
+#            backend:
+#              serviceName: riotweb-cip
+#              servicePort: 80
+
+    - host: "rw.sunsingerus.com"
+      http:
+        paths:
+          - path: "/"
+            backend:
+              serviceName: riotweb-cip
+              servicePort: 80
+#  tls:
+#    - hosts:
+#      - "rw.sunsingerus.com"
+#      secretName: rw-sun-com-tls
