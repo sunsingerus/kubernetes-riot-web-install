@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: "riotweb"
+spec:
+  rules:
+#    - host: rw.sunsingerus.com
+#    - host: acbb63ff6f41a11e9a5d6027084950b3-d1794dfb774ed1b5.elb.us-east-1.amazonaws.com
+#    - host: ""
+#      http:
+#        paths:
+#          - path: "/*"
+#            backend:
+#              serviceName: riotweb-cip
+#              servicePort: 80
+#          - path: ""
+#            backend:
+#              serviceName: riotweb-cip
+#              servicePort: 80
+
+  # Default backend
+  backend:
+    serviceName: riotweb-cip
+    servicePort: 80
+
+#    - http:
+#        paths:
+#          - backend:
+#              serviceName: riotweb-cip
+#              servicePort: 80
