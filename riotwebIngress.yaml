@@ -2,6 +2,10 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: "riotweb"
+  annotations:
+#    cert-manager.io/issuer: "riotweb-staging"
+    cert-manager.io/issuer: "riotweb-prod"
+    kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
 #    - host: rw.sunsingerus.com
@@ -43,7 +47,7 @@ spec:
             backend:
               serviceName: riotweb-cip
               servicePort: 80
-#  tls:
-#    - hosts:
-#      - "rw.sunsingerus.com"
-#      secretName: rw-sun-com-tls
+  tls:
+    - hosts:
+      - "rw.sunsingerus.com"
+      secretName: riotweb-tls

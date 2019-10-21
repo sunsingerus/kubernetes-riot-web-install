@@ -7,7 +7,7 @@ data:
     {
         "default_server_config": {
             "m.homeserver": {
-                "base_url": "http://a6f91a45ff00e11e9a5d6027084950b3-988414432.us-east-1.elb.amazonaws.com",
+                "base_url": "https://synapse.sunsingerus.com",
                 "server_name": "my.matrix.host"
             },
             "m.identity_server": {
