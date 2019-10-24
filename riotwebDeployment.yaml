@@ -30,5 +30,5 @@ spec:
     - name: config-volume
       configMap:
         name: riotwebconfig
-  restartPolicy: Never
+  restartPolicy: Always
 
